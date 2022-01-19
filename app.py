@@ -1,9 +1,7 @@
+from prompt_toolkit import HTML
+import streamlit.components.v1 as components
 import streamlit as st
-col1,col2=st.beta_columns(2)
-with col1:
-    st.image("mp.jpeg",None,300)
-with col2:
-    st.image('WAPP.png',None,)
+st.image('WAPP.png',None)
 col1,col2=st.beta_columns(2)
 with col1:
     Nombre=st.text_input("¿Como te llamas?")
@@ -23,4 +21,5 @@ with col2:
     imctxt = '<b style= "text-align:center; font-family:Times; color:#2980B9; font-size: 30px;">Índice de masa corporal</b>'
     st.markdown(imctxt,unsafe_allow_html=True)
     st.success(imc)
-
+#if imc >24.9 and imc <29.9:
+ #   st.write(Nombre," tienes un IMC dentro de los niveles superiores, estas a buen momento de reducir tu peso con ejercicio y dieta para evitar complicaciones futuras y evitar enfermedades como diabetes e hipertensión")
