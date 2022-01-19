@@ -11,11 +11,16 @@ with col1:
     edad=st.slider("Edad",16,120,18,1)
     bienvenida="Bienvenida "+Nombre+ " iniciaremos con algunas preguntas"
     bienvenido="Bienvenido "+Nombre+ " iniciaremos con algunas preguntas"
-inicio=st.button("Empecemos")
+    talla=st.number_input("Talla en cm",1.0,2.6,1.5,0.1)
+    peso=st.number_input("Peso",20,500,60,1)
+    imc0=peso/talla**2
+    #round se usa para redondear y quitar decimales
+    imc=round(imc0,1)
 
-if inicio==True and genero=="Femenino":
-    st.success(bienvenida)
-elif inicio==True and genero=="Masculino":
-    st.success(bienvenido)
+
 with col2:
     st.image("fit2.png",None,300)
+    imctxt = '<b style= "text-align:center; font-family:Times; color:#2980B9; font-size: 30px;">Índice de masa corporal</b>'
+    st.markdown(imctxt,unsafe_allow_html=True)
+    st.success(imc)
+
