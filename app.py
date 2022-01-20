@@ -12,6 +12,7 @@ with col1:
     bienvenido="Bienvenido "+Nombre+ " iniciaremos con algunas preguntas"
     talla=st.number_input("Talla en cm",1.0,2.6,1.5,0.1)
     peso=st.number_input("Peso",20,500,60,1)
+    #Calcular el IMc hasta presionar un boton 
     imc0=peso/talla**2
     #round se usa para redondear y quitar decimales
     imc=round(imc0,1)
