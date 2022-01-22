@@ -1,12 +1,13 @@
+from email.headerregistry import UniqueSingleAddressHeader
 from prompt_toolkit import HTML
+from sqlalchemy import true
 import streamlit.components.v1 as components
 import streamlit as st
 st.image('WAPP.png',None)
-col1,col2=st.columns(2)
+col1,col2=st.beta_columns(2)
 with col1:
     Nombre=st.text_input("¿Como te llamas?")
     genero=st.selectbox("Género",["Femenino","Masculino"])
-    comorb=st.multiselect("Tienes alguna enfermedad",['Ninguna',"Diabetes mellitus","Hipertensión arterial (presión alta)","Problemas cardiacos","Hígado graso","Dislipidemia (Problemas de lípidos)"],"Ninguna")
     edad=st.slider("Edad",10,120,18,1)
     bienvenida="Bienvenida "+Nombre+ " iniciaremos con algunas preguntas"
     bienvenido="Bienvenido "+Nombre+ " iniciaremos con algunas preguntas"
@@ -22,23 +23,29 @@ with col2:
     st.image("fit2.png",None,300)
     imctxt = '<b style= "text-align:center; font-family:Times; color:#2980B9; font-size: 30px;">Índice de masa corporal</b>'
     st.markdown(imctxt,unsafe_allow_html=True)
-
-if imc>=18.5 and imc <=24.9:
-    st.balloons()
-    with col2:
-        st.success(imc)
-        st.write("Tienes un peso excelente",Nombre,' te encuentras dentro del rango normal')
-elif imc<=18.5:
+if imc <= 18.5:
     with col2:
         st.warning(imc)
-        st.write("Tienes un peso bajo",Nombre,' se recomienda aumentar de peso')
-    st.subheader ("Intenta estas recomendaciones")
+    bajopeso='<b style= "text-align:center; font-family:Times; color:#2980B9; font-size: 20px;">Estas en bajo peso</b>'
+    insbap='<b style= "text-align:center; font-family:Times; color:#3E9185; font-size: 18px;">Sigue las siguientes recomendaciones para aumentar de peso</b>'
+    with col2:
+        st.markdown(bajopeso,unsafe_allow_html=True)
+    st.markdown(insbap, unsafe_allow_html=True)
     st.subheader("https://www.medicalnewstoday.com/articles/es/326685")
-elif imc >=25 and imc <=29.9:
-    with col2:
-        st.warning(imc)
-        st.write("Tienes sobrepeso",Nombre,' se recomienda disminuir de peso, estas en el momento correcto para evitar enfermedades y complicaciones')
-elif imc >=30 and imc <=34.9 and "Ninguna" in comorb:   
-    with col2:
-        st.warning(imc)
-        st.write("Tienes obesidad grado I",Nombre,' se recomienda disminuir de peso, estas en un alto riesgo para enfermedades metabólicas y enfermedades cardiovasculares')
+
+#comentar todo lo seleccionado con cmd+shift+/
+# if imc>=18.5 and imc <=24.9:
+#     st.balloons()
+#     with col2:
+#         st.success(imc)
+#         st.write("Tienes un peso excelente",Nombre,' te encuentras dentro del rango normal')
+# elif imc<=18.5:
+#     with col2:
+#         st.warning(imc)
+#         st.write("Tienes un peso bajo",Nombre,' se recomienda aumentar de peso')
+#     st.subheader ("Intenta estas recomendaciones")
+#     st.subheader("https://www.medicalnewstoday.com/articles/es/326685")
+# elif imc >=25 and imc <=29.9:
+#     with col2:
+#         st.warning(imc)
+#         st.write("Tienes sobrepeso",Nombre,' se recomienda disminuir de peso, estas en el momento correcto para evitar enfermedades y complicaciones')
