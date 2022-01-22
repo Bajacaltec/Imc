@@ -1,6 +1,5 @@
 from email.headerregistry import UniqueSingleAddressHeader
 from prompt_toolkit import HTML
-from sqlalchemy import true
 import streamlit.components.v1 as components
 import streamlit as st
 st.image('WAPP.png',None)
