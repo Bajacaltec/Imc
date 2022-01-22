@@ -3,7 +3,7 @@ from prompt_toolkit import HTML
 import streamlit.components.v1 as components
 import streamlit as st
 st.image('WAPP.png',None)
-col1,col2=st.beta_columns(2)
+col1,col2=st.columns(2)
 with col1:
     Nombre=st.text_input("¿Como te llamas?")
     genero=st.selectbox("Género",["Femenino","Masculino"])
