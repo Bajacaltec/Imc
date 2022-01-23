@@ -34,7 +34,7 @@ if imc <= 18.5:
 elif imc >= 18.6 and imc <=25:
     with col2:
         st.success(imc)
-    normpeso='<b style= "text-align:center; font-family:Times; color:#2980B9; font-size: 20px;">Estas en bajo peso</b>'
+    normpeso='<b style= "text-align:center; font-family:Times; color:#2980B9; font-size: 20px;">Estas en tu peso ideal, sigue así</b>'
     with col2:
         st.markdown(normpeso,unsafe_allow_html=True)
 
