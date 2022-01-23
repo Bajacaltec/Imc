@@ -37,6 +37,12 @@ elif imc >= 18.6 and imc <=25:
     normpeso='<b style= "text-align:center; font-family:Times; color:#2980B9; font-size: 20px;">Estas en tu peso ideal, sigue así</b>'
     with col2:
         st.markdown(normpeso,unsafe_allow_html=True)
+elif imc >= 25 and imc <=30:
+    with col2:
+        st.warning(imc)
+    normpeso='<b style= "text-align:center; font-family:Times; color:#2980B9; font-size: 20px;">Estas en sobrepeso, es importante que bajes de peso para evitar contraer enfermedades como diabetes mellitus e hipertensión arterial</b>'
+    with col2:
+        st.markdown(normpeso,unsafe_allow_html=True)
 
 #comentar todo lo seleccionado con cmd+shift+/
 # if imc>=18.5 and imc <=24.9:
