@@ -43,6 +43,18 @@ elif imc >= 25 and imc <=30:
     normpeso='<b style= "text-align:center; font-family:Times; color:#2980B9; font-size: 20px;">Estas en sobrepeso, es importante que bajes de peso para evitar contraer enfermedades como diabetes mellitus e hipertensión arterial</b>'
     with col2:
         st.markdown(normpeso,unsafe_allow_html=True)
+elif imc >= 30 and imc <=35:
+    with col2:
+        st.error(imc)
+    ob1peso='<b style= "text-align:center; font-family:Times; color:#2980B9; font-size: 20px;">Obesidad grado I, el riesgo de padecer enfermedades metabólicas es alto, se recomienda disminuir de peso inmediatamente</b>'
+    with col2:
+        st.markdown(normpeso,unsafe_allow_html=True)
+elif imc >= 35 and imc <=40:
+    with col2:
+        st.error(imc)
+    ob1peso='<b style= "text-align:center; font-family:Times; color:#2980B9; font-size: 20px;">Obesidad grado II, el riesgo de padecer enfermedades metabólicas es muy alto, se recomienda disminuir de peso inmediatamente</b>'
+    with col2:
+        st.markdown(normpeso,unsafe_allow_html=True)
 
 #comentar todo lo seleccionado con cmd+shift+/
 # if imc>=18.5 and imc <=24.9:
