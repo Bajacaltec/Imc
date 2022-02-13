@@ -13,11 +13,6 @@ with fol2:
 st.title("IMC app")
 col1,col2=st.columns(2)
 with col1:
-    Nombre=st.text_input("¿Como te llamas?")
-    genero=st.selectbox("Género",["Femenino","Masculino"])
-    edad=st.slider("Edad",10,120,18,1)
-    bienvenida="Bienvenida "+Nombre+ " iniciaremos con algunas preguntas"
-    bienvenido="Bienvenido "+Nombre+ " iniciaremos con algunas preguntas"
     talla=st.number_input("Talla en cm",1.0,2.6,1.5,0.1)
     peso=st.number_input("Peso",20,500,60,1)
     #Calcular el IMc hasta presionar un boton 
