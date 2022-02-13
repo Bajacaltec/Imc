@@ -3,10 +3,15 @@ from enum import auto
 from prompt_toolkit import HTML
 import streamlit.components.v1 as components
 import streamlit as st
-st.image('WAPP.png',None,350,auto)
+fol1,fol2=st.columns(2)
+with fol1:
+    st.title("IMCapp")
+
+with fol2:
+    st.image("WAPP.png",None,350)
 
 st.title("IMC app")
-col1,col2=st.beta_columns(2)
+col1,col2=st.columns(2)
 with col1:
     Nombre=st.text_input("¿Como te llamas?")
     genero=st.selectbox("Género",["Femenino","Masculino"])
