@@ -27,10 +27,9 @@ if calcular==True:
     if imc <= 18.5:
         with col2:
             st.warning(imc)
-        bajopeso='<b style= "text-align:center; font-family:Times; color:#2980B9; font-size: 20px;">Estas en bajo peso</b>'
         insbap='<b style= "text-align:center; font-family:Times; color:#3E9185; font-size: 18px;">Sigue las siguientes recomendaciones para aumentar de peso</b>'
-        with col2:
-            st.markdown(bajopeso,unsafe_allow_html=True)
+        
+        st.markdown(bajopeso,unsafe_allow_html=True)
         st.markdown(insbap, unsafe_allow_html=True)
         st.subheader("https://www.medicalnewstoday.com/articles/es/326685")
     elif imc >= 18.6 and imc <=25:
