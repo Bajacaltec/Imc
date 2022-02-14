@@ -3,13 +3,13 @@ from enum import auto
 from prompt_toolkit import HTML
 import streamlit.components.v1 as components
 import streamlit as st
-fol1,fol2=st.beta_columns(2)
+fol1,fol2=st.columns(2)
 with fol1:
     st.title("IMCapp")
 with fol2:
     st.image("WAPP.png",None,350)
 
-col1,col2=st.beta_columns(2)
+col1,col2=st.columns(2)
 with col1:
     talla=st.number_input("Talla en cm",1.0,2.6,1.5,0.1)
     peso=st.number_input("Peso",20,500,60,1)
@@ -22,7 +22,7 @@ with col1:
 with col2:
         st.image("fit2.png",None,200,auto)
 calcular=st.button("Calcular índice de masa corporal",)
-wol1,wol2=st.beta_columns(2)
+wol1,wol2=st.columns(2)
 if calcular==True:
     if imc < 18.5:
         with wol1:
